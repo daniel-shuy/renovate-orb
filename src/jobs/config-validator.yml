@@ -1,0 +1,22 @@
+description: >
+  Validate Renovate configuration file (see https://docs.renovatebot.com/configuration-options/ for configuration options)
+  and/or self-hosted configuration file (see https://github.com/renovatebot/renovate/blob/master/docs/usage/self-hosting.md#user-content-configuration)
+
+executor:
+  name: default
+  tag: <<parameters.docker-image-tag>>
+
+parameters:
+  docker-image-tag:
+    type: string
+    default: "slim"
+    description: |
+      Tag of a slim Docker image that matches the Renovate version:
+      https://hub.docker.com/r/renovate/renovate/tags
+      You only need to override this parameter if you are using a self-hosted instance of Renovate.
+
+steps:
+  - checkout
+  - run:
+      name: Validate Renovate config
+      command: renovate-config-validator
