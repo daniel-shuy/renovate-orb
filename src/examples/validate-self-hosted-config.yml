@@ -1,0 +1,13 @@
+description: >
+  Validate Renovate configuration file (see https://docs.renovatebot.com/configuration-options/ for configuration options)
+  and self-hosted configuration file (see https://github.com/renovatebot/renovate/blob/master/docs/usage/self-hosting.md#user-content-configuration).
+
+usage:
+  version: 2.1
+  orbs:
+    renovate: daniel-shuy/renovate@x.y
+  workflows:
+    lint:
+      jobs:
+        - renovate/validate-config:
+            self_hosted_config_file_path: renovate.config.js

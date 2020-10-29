@@ -1,0 +1,10 @@
+description: Validate Renovate configuration file (see https://docs.renovatebot.com/configuration-options/ for configuration options).
+
+usage:
+  version: 2.1
+  orbs:
+    renovate: daniel-shuy/renovate@x.y
+  workflows:
+    lint:
+      jobs:
+        - renovate/validate-config
