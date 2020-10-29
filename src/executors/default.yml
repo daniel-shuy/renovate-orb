@@ -1,11 +1,12 @@
 description: >
-  This is a sample executor using Docker and Node.
+  Docker image for Renovate CLI
 docker:
-  - image: 'cimg/node:<<parameters.tag>>'
+  - image: 'renovate/renovate:<<parameters.tag>>'
 parameters:
   tag:
-    default: lts
-    description: >
-      Pick a specific circleci/node image variant:
-      https://hub.docker.com/r/cimg/node/tags
+    default: latest
+    description: |
+      Pick a specific renovate/renovate image variant:
+      https://hub.docker.com/r/renovate/renovate/tags
+      Use the "slim" tag if you only use package managers that don't need third party binaries (e.g. JS, Docker, Nuget, pip)
     type: string
