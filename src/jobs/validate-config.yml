@@ -1,0 +1,32 @@
+description: >
+  Validate Renovate configuration file (see https://docs.renovatebot.com/configuration-options/ for configuration options)
+  and/or self-hosted configuration file (see https://github.com/renovatebot/renovate/blob/master/docs/usage/self-hosting.md#user-content-configuration)
+
+executor:
+  name: default
+  tag: "\
+    <<# parameters.renovate_version >>\
+    << parameters.renovate_version >>-slim\
+    <</ parameters.renovate_version >>\
+    <<^ parameters.renovate_version >>\
+    slim\
+    <</ parameters.renovate_version >>\
+    "
+
+parameters:
+  renovate_version:
+    type: string
+    default: ""
+    description: Override this with the Renovate version if you are using a self-hosted instance of Renovate, else leave it empty.
+  self_hosted_config_file_path:
+    type: string
+    default: config.js
+    description: Self-hosted configuration file to validate, if any.
+
+steps:
+  - checkout
+  - run:
+      name: Validate Renovate config
+      command: renovate-config-validator
+      environment:
+        RENOVATE_CONFIG_FILE: << parameters.self_hosted_config_file_path >>
