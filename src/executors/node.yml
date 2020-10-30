@@ -1,0 +1,4 @@
+description: >
+  Docker image for Node.js
+docker:
+  - image: 'cimg/node:current'

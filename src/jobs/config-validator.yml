@@ -2,9 +2,7 @@ description: >
   Validate Renovate configuration file (see https://docs.renovatebot.com/configuration-options/ for configuration options)
   and/or self-hosted configuration file (see https://github.com/renovatebot/renovate/blob/master/docs/usage/self-hosting.md#user-content-configuration)
 
-executor:
-  name: default
-  tag: <<parameters.docker-image-tag>>
+executor: node
 
 parameters:
   docker-image-tag:
@@ -14,9 +12,38 @@ parameters:
       Tag of a slim Docker image that matches the Renovate version:
       https://hub.docker.com/r/renovate/renovate/tags
       You only need to override this parameter if you are using a self-hosted instance of Renovate.
+  yarn-cache-version:
+    type: string
+    default: v1
+    description: Change the default cache version if you need to clear the cache for any reason.
 
 steps:
+  - restore_cache:
+      name: Restore YARN global package cache
+      keys:
+        - renovate-yarn-global-packages-<<parameters.yarn-cache-version>>-
+  - restore_cache:
+      name: Restore YARN package cache
+      keys:
+        - renovate-yarn-packages-<<parameters.yarn-cache-version>>-
+  - run:
+      name: Install Renovate CLI
+      command: |
+        yarn global add renovate
   - checkout
   - run:
       name: Validate Renovate config
-      command: renovate-config-validator
+      command: $(yarn global bin)/renovate-config-validator
+  - run:
+      name: Link YARN lockfile for checksum
+      command: ln --symbolic $(yarn global dir)/yarn.lock ~/yarn.lock
+  - save_cache:
+      name: Save YARN package cache
+      key: renovate-yarn-packages-<<parameters.yarn-cache-version>>-{{ checksum "~/yarn.lock" }}
+      paths:
+        - ~/.cache/yarn # TODO: use $(yarn cache dir) instead when CircleCI supports environment variables in save_cache.paths
+  - save_cache:
+      name: Save YARN global package cache
+      key: renovate-yarn-global-packages-<<parameters.yarn-cache-version>>-{{ checksum "~/yarn.lock" }}
+      paths:
+        - ~/.config/yarn/global # TODO: use $(yarn global dir) instead when CircleCI supports environment variables in save_cache.paths
