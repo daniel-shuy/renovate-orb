@@ -1,7 +1,7 @@
 description: >
   Docker image for Renovate CLI
 docker:
-  - image: 'renovate/renovate:<<parameters.tag>>'
+  - image: "renovate/renovate:<<parameters.tag>>"
 parameters:
   tag:
     default: latest
