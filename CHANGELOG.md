@@ -8,22 +8,10 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [1.0.0] - 2020-10-30
+
 ### Added
 
 - Add `validate-config` Job
-
-## [1.0.0] - YYYY-MM-DD
-
-### Added
-
-- Initial Release
-
-### Changed
-
-- Initial Release
-
-### Removed
-
-- Initial Release
 
 [1.0.0]: GITHUB TAG URL
