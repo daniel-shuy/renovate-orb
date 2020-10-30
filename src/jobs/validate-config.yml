@@ -6,10 +6,10 @@ executor:
   name: default
   tag: "\
     <<# parameters.renovate_version >>\
-      << parameters.renovate_version >>-slim\
+    << parameters.renovate_version >>-slim\
     <</ parameters.renovate_version >>\
     <<^ parameters.renovate_version >>\
-      slim\
+    slim\
     <</ parameters.renovate_version >>\
     "
 
