@@ -4,4 +4,5 @@ description: >
   Orb for WhiteSource Renovate
 
 display:
-  source_url: "https://github.com/daniel-shuy/renovate-orb"
+  home_url: https://renovatebot.com/
+  source_url: https://github.com/daniel-shuy/renovate-orb
