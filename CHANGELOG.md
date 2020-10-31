@@ -8,6 +8,8 @@ and this project adheres to
 
 ## [Unreleased]
 
+- Add `self-hosted` Job
+
 ## [1.0.0] - 2020-10-30
 
 ### Added

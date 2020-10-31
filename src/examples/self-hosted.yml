@@ -1,0 +1,38 @@
+description: |
+  Run a self-hosted instance of Renovate.
+
+  Authentication:
+  1. Create a bot account for the Git repository.
+  2. Generate a Personal Access Token for the bot account.
+  3. In Project Settings, configure the RENOVATE_REPOSITORY_AUTH_TOKEN environment variable (or alternately the name of environment variable passed into the repository_auth_token parameter) as the generated Personal Access Token.
+  For more information, see: https://github.com/renovatebot/renovate/blob/master/docs/usage/self-hosting.md#user-content-authentication
+
+  Configuration:
+  1. Create a Renovate self-hosted configuration file (eg. renovate.config.js).
+  2. Pass the file path into the config_file_path parameter.
+  3. Commit and push the changes to the branch configured in the schedule filter branch. This is usually the default branch (eg. master).
+  For more information, see:
+  - https://github.com/renovatebot/renovate/blob/master/docs/usage/self-hosting.md#user-content-configuration
+  - https://github.com/renovatebot/renovate/blob/master/docs/usage/self-hosted-configuration.md
+  - https://docs.renovatebot.com/self-hosted-configuration
+
+  For more information and examples, see: https://github.com/renovatebot/renovate/blob/master/docs/usage/self-hosting.md
+
+  The example below runs Renovate hourly:
+usage:
+  version: 2.1
+  orbs:
+    renovate: daniel-shuy/renovate@x.y
+  workflows:
+    renovate:
+      nightly:
+        triggers:
+          - schedule:
+              cron: "0 * * * *"
+              filters:
+                branches:
+                  only:
+                    - master
+      jobs:
+        - renovate/self-hosted:
+            config_file_path: renovate.config.js
