@@ -6,7 +6,11 @@
 [![CircleCI Community](https://img.shields.io/badge/community-CircleCI%20Discuss-343434.svg)](https://discuss.circleci.com/c/ecosystem/orbs)
 
 An orb for running the [WhiteSource Renovate](https://renovatebot.com/) CLI on
-CircleCI
+CircleCI.
+
+This orb can be used to:
+- Validate Renovate configuration files (can be used regardless if you are using Renovate cloud or self-hosted)
+- Run a self-hosted instance of Renovate.
 
 ## Usage
 
