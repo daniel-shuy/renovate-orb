@@ -8,6 +8,10 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [1.1.0] - 2020-10-31
+
+### Added
+
 - Add `self-hosted` Job
 
 ## [1.0.0] - 2020-10-30
@@ -16,4 +20,5 @@ and this project adheres to
 
 - Add `validate-config` Job
 
-[1.0.0]: GITHUB TAG URL
+[1.1.0]: https://github.com/daniel-shuy/renovate-orb/compare/1.0.0...1.1.0
+[1.0.0]: https://github.com/daniel-shuy/renovate-orb/releases/tag/1.0.0
