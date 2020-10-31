@@ -1,0 +1,46 @@
+description: >
+  Run a self-hosted instance of Renovate.
+
+executor:
+  name: default
+  tag: "\
+    <<# parameters.renovate_version >>\
+    << parameters.renovate_version >><<# parameters.slim >>-slim<</ parameters.slim >>\
+    <</ parameters.renovate_version >>\
+    <<^ parameters.renovate_version >>\
+    <<# parameters.slim >>\
+    slim\
+    <</ parameters.slim >>\
+    <<^ parameters.slim >>\
+    latest\
+    <</ parameters.slim >>\
+    <</ parameters.renovate_version >>\
+    "
+
+parameters:
+  repository_auth_token:
+    type: env_var_name
+    default: RENOVATE_REPOSITORY_AUTH_TOKEN
+    description: |
+      Environment variable name for the Git repository Personal Auth Token for the bot account.
+      See https://github.com/renovatebot/renovate/blob/master/docs/usage/self-hosting.md#user-content-authentication
+  config_file_path:
+    type: string
+    default: config.js
+    description: Path to configuration file (see https://docs.renovatebot.com/self-hosted-configuration/ for configuration options).
+  renovate_version:
+    type: string
+    default: ""
+    description: Version of Renovate to run (if no version is specified, runs the latest version).
+  slim:
+    type: boolean
+    default: false
+    description: |
+      Use "slim" Docker images to reduce startup time.
+      Set to true if you only use package managers that don't need third party binaries (e.g. JS, Docker, Nuget, pip).
+
+steps:
+  - checkout
+  - run:
+      name: Execute Renovate CLI
+      command: renovate --token ${<< parameters.repository_auth_token >>}

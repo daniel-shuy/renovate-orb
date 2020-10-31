@@ -1,7 +1,7 @@
 version: 2.1
 
 description: >
-  Orb for WhiteSource Renovate
+  Validate Renovate configuration files, or run a self-hosted instance of Renovate.
 
 display:
   home_url: https://renovatebot.com/
