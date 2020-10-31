@@ -1,4 +1,7 @@
-description: Validate Renovate configuration file (see https://docs.renovatebot.com/configuration-options/ for configuration options).
+description: |
+  Validate Renovate configuration file.
+
+  Configuration file definition: https://docs.renovatebot.com/configuration-options/
 
 usage:
   version: 2.1

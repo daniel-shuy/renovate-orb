@@ -1,6 +1,8 @@
-description: >
-  Validate Renovate configuration file (see https://docs.renovatebot.com/configuration-options/ for configuration options)
-  and self-hosted configuration file (see https://github.com/renovatebot/renovate/blob/master/docs/usage/self-hosting.md#user-content-configuration).
+description: |
+  Validate Renovate configuration file and self-hosted configuration file.
+
+  Configuration file definition: https://docs.renovatebot.com/configuration-options/
+  Self-hosted configuration file docs: https://github.com/renovatebot/renovate/blob/master/docs/usage/self-hosting.md#user-content-configuration
 
 usage:
   version: 2.1
