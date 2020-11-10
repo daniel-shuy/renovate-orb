@@ -19,7 +19,7 @@ For full usage guidelines, see the
 
 ## Resources
 
-[CircleCI Orb Registry Page](https://circleci.com/orbs/registry/orb/daniel-shuy/renovate-orb) -
+[CircleCI Orb Registry Page](https://circleci.com/orbs/registry/orb/daniel-shuy/renovate) -
 The official registry page of this orb for all versions, executors, commands,
 and jobs described.
 
