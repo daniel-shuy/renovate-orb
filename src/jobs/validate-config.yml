@@ -28,6 +28,9 @@ parameters:
 steps:
   - checkout
   - run:
+      name: Check environment variables
+      command: env
+  - run:
       name: Validate Renovate config
       command: renovate-config-validator
       environment:
