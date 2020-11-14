@@ -8,6 +8,8 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [2.0.0] - 2020-11-14
+
 ### Removed
 
 - Remove `repository_auth_token` parameter from `self-hosted` job
