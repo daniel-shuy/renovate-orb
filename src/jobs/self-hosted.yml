@@ -55,6 +55,8 @@ steps:
   - run:
       name: Execute Renovate CLI
       command: renovate
+      environment:
+        RENOVATE_CONFIG_FILE: << parameters.config_file_path >>
   - when:
       condition: << parameters.with_cache >>
       steps:
