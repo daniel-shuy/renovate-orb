@@ -8,6 +8,8 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [2.1.1] - 2020-11-14
+
 ### Changed
 
 - Fix `config_file_path` parameter for `self-hosted` job
