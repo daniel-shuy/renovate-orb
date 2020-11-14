@@ -1,12 +1,6 @@
 description: |
   Run a self-hosted instance of Renovate.
 
-  Authentication:
-  1. Create a bot account for the Git repository.
-  2. Generate a Personal Access Token for the bot account.
-  3. In Project Settings, configure the RENOVATE_REPOSITORY_AUTH_TOKEN environment variable (or alternately the name of environment variable passed into the repository_auth_token parameter) as the generated Personal Access Token.
-  For more information, see: https://github.com/renovatebot/renovate/blob/master/docs/usage/self-hosting.md#user-content-authentication
-
   Configuration:
   1. Create a Renovate self-hosted configuration file (eg. renovate.config.js).
   2. Pass the file path into the config_file_path parameter.
@@ -15,6 +9,10 @@ description: |
   - https://github.com/renovatebot/renovate/blob/master/docs/usage/self-hosting.md#user-content-configuration
   - https://github.com/renovatebot/renovate/blob/master/docs/usage/self-hosted-configuration.md
   - https://docs.renovatebot.com/self-hosted-configuration
+
+  Secrets should be configured using environment variables (eg. RENOVATE_TOKEN, GITHUB_COM_TOKEN).
+
+  Configure environment variables in CircleCI Project Settings. To share environment variables across projects, use CircleCI Contexts (https://circleci.com/docs/2.0/contexts/).
 
   For more information and examples, see: https://github.com/renovatebot/renovate/blob/master/docs/usage/self-hosting.md
 
