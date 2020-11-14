@@ -1,5 +1,7 @@
-description: >
+description: |
   Run a self-hosted instance of Renovate.
+
+  WARNING: Do not override cacheDir or RENOVATE_CACHE_DIR, or caching will be disabled, as this Orb does not support alternate cache directory locations as the moment.
 
 executor:
   name: default
@@ -18,6 +20,10 @@ executor:
     "
 
 parameters:
+  cache_version:
+    type: string
+    default: v1
+    description: Change the default cache version if you need to clear the cache for any reason.
   config_file_path:
     type: string
     default: config.js
@@ -32,9 +38,28 @@ parameters:
     description: |
       Use "slim" Docker images to reduce startup time.
       Set to true if you only use package managers that don't need third party binaries (e.g. JS, Docker, Nuget, pip).
+  with_cache:
+    type: boolean
+    default: true
+    description: Share Renovate cache between runs.
 
 steps:
+  - when:
+      condition: << parameters.with_cache >>
+      steps:
+        - restore_cache:
+            name: Restore Renovate cache
+            keys:
+              - renovate-<< parameters.cache_version >>-
   - checkout
   - run:
       name: Execute Renovate CLI
       command: renovate
+  - when:
+      condition: << parameters.with_cache >>
+      steps:
+        - save_cache:
+            name: Save YARN package cache
+            key: renovate-<< parameters.cache_version >>-{{ epoch }}
+            paths:
+              - /tmp/renovate/cache # TODO: Use $RENOVATE_CACHE_DIR when CircleCI supports environment variables in save_cache.paths
