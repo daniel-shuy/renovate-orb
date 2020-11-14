@@ -2,7 +2,7 @@ description: |
   Run a self-hosted instance of Renovate.
 
   Configuration:
-  1. Create a Renovate self-hosted configuration file (eg. renovate.config.js).
+  1. Create a Renovate self-hosted configuration file (eg. renovate-config.js).
   2. Pass the file path into the config_file_path parameter.
   3. Commit and push the changes to the branch configured in the schedule filter branch. This is usually the default branch (eg. master).
   For more information, see:
@@ -33,4 +33,4 @@ usage:
                     - master
       jobs:
         - renovate/self-hosted:
-            config_file_path: renovate.config.js
+            config_file_path: renovate-config.js
