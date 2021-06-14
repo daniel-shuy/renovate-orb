@@ -15,11 +15,17 @@ executor:
     <</ parameters.renovate_version >>\
     "
 
+resource_class: <<parameters.resource_class>>
+
 parameters:
   renovate_version:
     type: string
     default: ""
     description: Override this with the Renovate version if you are using a self-hosted instance of Renovate, else leave it empty.
+  resource_class:
+    type: string
+    default: medium
+    description: Amount of CPU and RAM allocated to each container in a job.
   self_hosted_config_file_path:
     type: string
     default: config.js
