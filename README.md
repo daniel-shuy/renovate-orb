@@ -9,7 +9,9 @@ An orb for running the [WhiteSource Renovate](https://renovatebot.com/) CLI on
 CircleCI.
 
 This orb can be used to:
-- Validate Renovate configuration files (can be used regardless if you are using Renovate cloud or self-hosted)
+
+- Validate Renovate configuration files (can be used regardless if you are using
+  Renovate cloud or self-hosted)
 - Run a self-hosted instance of Renovate.
 
 ## Usage
