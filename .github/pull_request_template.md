@@ -29,5 +29,4 @@
 -->
 
 - [ ] All new jobs, commands, executors, parameters have descriptions.
-- [ ] Usage Example version numbers have been updated.
 - [ ] Changelog has been updated.
