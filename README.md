@@ -1,7 +1,7 @@
 # Renovate Orb
 
 [![CircleCI Build Status](https://circleci.com/gh/daniel-shuy/renovate-orb.svg?style=shield "CircleCI Build Status")](https://circleci.com/gh/daniel-shuy/renovate-orb)
-[![CircleCI Orb Version](https://img.shields.io/badge/endpoint.svg?url=https://badges.circleci.io/orb/daniel-shuy/renovate)](https://circleci.com/orbs/registry/orb/daniel-shuy/renovate)
+[![CircleCI Orb Version](https://badges.circleci.com/orbs/daniel-shuy/renovate.svg)](https://circleci.com/orbs/registry/orb/daniel-shuy/renovate)
 [![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/daniel-shuy/renovate-orb/master/LICENSE)
 [![CircleCI Community](https://img.shields.io/badge/community-CircleCI%20Discuss-343434.svg)](https://discuss.circleci.com/c/ecosystem/orbs)
 
@@ -36,9 +36,9 @@ repository!
 
 - Create and push a branch with your new features.
 - When ready to publish a new production version, create a Pull Request from
-  fore _feature branch_ to `master`.
+  _feature branch_ to `main`.
 - The title of the pull request must contain a special semver tag:
-  `[semver:<segement>]` where `<segment>` is replaced by one of the following
+  `[semver:<segment>]` where `<segment>` is replaced by one of the following
   values.
 
 | Increment | Description                       |
