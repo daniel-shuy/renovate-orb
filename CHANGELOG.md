@@ -8,6 +8,12 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [2.2.0] - 2021-06-15
+
+### Changed
+
+- Add `resource_class` parameter
+
 ## [2.1.1] - 2020-11-14
 
 ### Changed
