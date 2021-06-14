@@ -79,3 +79,19 @@ workflows:
               only:
                 - master
                 - main
+
+  # Republish the dev:alpha orb every month to ensure new pipelines don't get rejected due to expired dev orbs.
+  keep-dev-orb:
+    triggers:
+      - schedule:
+          cron: "0 0 1 * *"
+          filters:
+            branches:
+              only:
+                - master
+                - main
+    jobs:
+      - orb-tools/publish-dev:
+          orb-name: daniel-shuy/renovate
+          context: orb-publishing
+          publish-sha-version: false
