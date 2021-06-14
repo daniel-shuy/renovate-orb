@@ -19,6 +19,8 @@ executor:
     <</ parameters.renovate_version >>\
     "
 
+resource_class: <<parameters.resource_class>>
+
 parameters:
   cache_version:
     type: string
@@ -38,6 +40,10 @@ parameters:
     description: |
       Use "slim" Docker images to reduce startup time.
       Set to true if you only use package managers that don't need third party binaries (e.g. JS, Docker, Nuget, pip).
+  resource_class:
+    type: string
+    default: medium
+    description: Amount of CPU and RAM allocated to each container in a job.
   with_cache:
     type: boolean
     default: true
