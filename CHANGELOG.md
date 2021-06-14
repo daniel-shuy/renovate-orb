@@ -30,7 +30,8 @@ and this project adheres to
 
 ### Removed
 
-- **[self-hosted]:** Remove `repository_auth_token` parameter from `self-hosted` job
+- **[self-hosted]:** Remove `repository_auth_token` parameter from `self-hosted`
+  job
 
 ## [1.1.0] - 2020-10-31
 
