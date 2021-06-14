@@ -8,6 +8,12 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [2.2.0] - 2021-06-15
+
+### Changed
+
+- Add `resource_class` parameter
+
 ## [2.1.1] - 2020-11-14
 
 ### Changed
@@ -24,7 +30,8 @@ and this project adheres to
 
 ### Removed
 
-- **[self-hosted]:** Remove `repository_auth_token` parameter from `self-hosted` job
+- **[self-hosted]:** Remove `repository_auth_token` parameter from `self-hosted`
+  job
 
 ## [1.1.0] - 2020-10-31
 
