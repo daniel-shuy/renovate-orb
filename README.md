@@ -2,7 +2,7 @@
 
 [![CircleCI Build Status](https://circleci.com/gh/daniel-shuy/renovate-orb.svg?style=shield "CircleCI Build Status")](https://circleci.com/gh/daniel-shuy/renovate-orb)
 [![CircleCI Orb Version](https://badges.circleci.com/orbs/daniel-shuy/renovate.svg)](https://circleci.com/orbs/registry/orb/daniel-shuy/renovate)
-[![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/daniel-shuy/renovate-orb/master/LICENSE)
+[![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/daniel-shuy/renovate-orb/main/LICENSE)
 [![CircleCI Community](https://img.shields.io/badge/community-CircleCI%20Discuss-343434.svg)](https://discuss.circleci.com/c/ecosystem/orbs)
 
 An orb for running the [WhiteSource Renovate](https://renovatebot.com/) CLI on
