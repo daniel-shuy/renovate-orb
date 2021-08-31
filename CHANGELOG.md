@@ -8,6 +8,8 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [3.0.0] - 2021-08-31
+
 ### Changed
 
 - Move self-hosted configuration file validation to a new
