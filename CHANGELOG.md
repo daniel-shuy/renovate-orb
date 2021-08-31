@@ -10,7 +10,8 @@ and this project adheres to
 
 ### Changed
 
-- Move self-hosted configuration file validation to a new `validate-self-hosted-config` job
+- Move self-hosted configuration file validation to a new
+  `validate-self-hosted-config` job
 
 ## [2.2.0] - 2021-06-15
 
