@@ -1,8 +1,9 @@
 description: |
-  Validate Renovate configuration file and self-hosted configuration file.
+  Validate Renovate self-hosted configuration file.
 
-  Configuration file definition: https://docs.renovatebot.com/configuration-options/
   Self-hosted configuration file docs: https://github.com/renovatebot/renovate/blob/master/docs/usage/self-hosting.md#user-content-configuration
+
+  Override self_hosted_config_file_path if the self-hosted configuration file is not at the default path (config.js).
 
 usage:
   version: 2.1
@@ -11,5 +12,6 @@ usage:
   workflows:
     lint:
       jobs:
-        - renovate/validate-config:
+        - renovate/validate-self-hosted-config:
+            renovate_version: $RENOVATE_VERSION
             self_hosted_config_file_path: renovate.config.js

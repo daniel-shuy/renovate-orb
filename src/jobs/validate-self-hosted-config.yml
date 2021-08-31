@@ -1,7 +1,7 @@
 description: >
-  Validate Renovate configuration file.
+  Validate Renovate self-hosted configuration file.
 
-  Configuration file definition: https://docs.renovatebot.com/configuration-options/
+  Self-hosted configuration file docs: https://github.com/renovatebot/renovate/blob/master/docs/usage/self-hosting.md#user-content-configuration
 
 executor:
   name: default
@@ -19,15 +19,20 @@ resource_class: <<parameters.resource_class>>
 parameters:
   renovate_version:
     type: string
-    default: ""
-    description: Override this with the Renovate version if you are using a self-hosted instance of Renovate, else leave it empty.
+    description: The version of your self-hosted instance of Renovate.
   resource_class:
     type: string
     default: medium
     description: Amount of CPU and RAM allocated to each container in a job.
+  self_hosted_config_file_path:
+    type: string
+    default: config.js
+    description: Path to self-hosted configuration file.
 
 steps:
   - checkout
   - run:
-      name: Validate Renovate config
+      name: Validate Renovate self-hosted config
       command: renovate-config-validator
+      environment:
+        RENOVATE_CONFIG_FILE: << parameters.self_hosted_config_file_path >>
