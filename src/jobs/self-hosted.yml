@@ -51,7 +51,7 @@ parameters:
   log_level:
     type: string
     default: info
-    description: Setting the log level to get more/less granular logs. More info: https://docs.renovatebot.com/examples/self-hosting/#logging
+    description: "Setting the log level to get more/less granular logs. More info: https://docs.renovatebot.com/examples/self-hosting/#logging"
 
 steps:
   - when:
