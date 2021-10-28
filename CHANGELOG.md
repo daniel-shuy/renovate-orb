@@ -8,6 +8,10 @@ and this project adheres to
 
 ## [Unreleased]
 
+### Added
+
+- **[self-hosted]:** Add log level param
+
 ## [3.0.0] - 2021-08-31
 
 ### Changed
