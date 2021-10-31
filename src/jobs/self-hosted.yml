@@ -48,6 +48,10 @@ parameters:
     type: boolean
     default: true
     description: Share Renovate cache between runs.
+  log_level:
+    type: string
+    default: info
+    description: "Setting the log level to get more/less granular logs. More info: https://docs.renovatebot.com/examples/self-hosting/#logging"
 
 steps:
   - when:
@@ -63,6 +67,7 @@ steps:
       command: renovate
       environment:
         RENOVATE_CONFIG_FILE: << parameters.config_file_path >>
+        LOG_LEVEL: << parameters.log_level >>
   - when:
       condition: << parameters.with_cache >>
       steps:
