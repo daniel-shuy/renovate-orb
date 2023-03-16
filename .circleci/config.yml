@@ -3,7 +3,7 @@ version: 2.1
 orbs:
   # Replace this with your own!
   renovate: daniel-shuy/renovate@<<pipeline.parameters.dev-orb-version>>
-  orb-tools: circleci/orb-tools@10.1.0
+  orb-tools: circleci/orb-tools@11.6.1
 
 # Pipeline Parameters
 ## These parameters are used internally by orb-tools. Skip to the Jobs section.
